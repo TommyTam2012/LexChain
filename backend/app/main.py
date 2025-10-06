@@ -1,21 +1,58 @@
-﻿
-from fastapi import FastAPI
+﻿# ==========================================================
+# LexChain FastAPI Main
+# ==========================================================
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
+from typing import List, Optional
+from pathlib import Path
+import os
 
+# ==========================================================
+# Routers (LangChain QA)
+# ==========================================================
+from app.routers import qa
+
+# ==========================================================
+# App Setup
+# ==========================================================
 app = FastAPI(title="LexChain API", version="0.0.1")
 
-# CORS (open for now; tighten later)
+# Register Routers
+app.include_router(qa.router)
+
+# ==========================================================
+# Middleware (CORS)
+# ==========================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://lexchain-w9rl.onrender.com",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# ==========================================================
+# Static Files (optional)
+# ==========================================================
+BASE_DIR = Path(__file__).parent.resolve()
+STATIC_DIR = BASE_DIR / "static"
+if STATIC_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+
+# ==========================================================
+# Core Routes
+# ==========================================================
 @app.get("/")
 def root():
-    return {"message": "LexChain backend online. Visit /docs for Swagger."}
+    """Redirect to /docs for Swagger."""
+    return RedirectResponse(url="/docs")
 
 @app.get("/health")
 def health():
@@ -23,13 +60,12 @@ def health():
 
 @app.get("/version")
 def version():
-    return {"name": "LexChain API", "version": "0.0.1"}
-# ======== LexChain demo: /cases/search (stub) ========
-from typing import List, Optional
-from fastapi import Query
-from pydantic import BaseModel
+    env = os.getenv("LEXCHAIN_ENV", "dev")
+    return {"name": "LexChain API", "version": "0.0.1", "env": env}
 
-# Sample stub data (replace with real CourtListener data later)
+# ==========================================================
+# LexChain Demo: /cases/search (stub)
+# ==========================================================
 SAMPLE_CASES = [
     {
         "id": "us-1999-001",
@@ -71,7 +107,10 @@ class SearchResult(BaseModel):
     items: List[Case]
 
 @app.get("/cases/search", response_model=SearchResult)
-def search_cases(q: str = Query(..., min_length=1, max_length=100, description="Search text")):
+def search_cases(
+    q: str = Query(..., min_length=1, max_length=100, description="Search text")
+):
+    """Simple stub search over sample cases."""
     ql = q.lower()
     items = []
     for c in SAMPLE_CASES:
@@ -79,5 +118,10 @@ def search_cases(q: str = Query(..., min_length=1, max_length=100, description="
         if ql in haystack:
             items.append(Case(**c))
     return SearchResult(query=q, count=len(items), items=items)
-# =====================================================
 
+# ==========================================================
+# Run (Local Dev Only)
+# ==========================================================
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)
