@@ -1,2 +1,7 @@
-﻿fastapi==0.114.2
-uvicorn[standard]==0.30.6
+fastapi
+uvicorn
+langchain
+langchain-openai
+langchain-community
+faiss-cpu
+openai
