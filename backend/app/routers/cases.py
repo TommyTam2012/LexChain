@@ -1,15 +1,16 @@
 # ==========================================================
-# LexChain – Phase 3.5: Multi-Case Synthesis / Chain of Precedents
+# LexChain – Phase 3.6: Citation Mapping & Graph Visualization
 # ==========================================================
 # Captain's Log:
-# Purpose: Extend LexChain to analyze multiple cases jointly.
-# Behavior: Synthesizes shared issues, alignments, and conflicts
-#            using FAISS retrieval + GPT reasoning.
+# Purpose: Map how cases cite (and are cited by) each other;
+#          return graph-ready JSON for visualization.
+# Behavior: Uses FAISS metadata ("citations": [...]) when present;
+#           optionally infers candidate links with GPT.
 # ==========================================================
 
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional, Tuple
 import os
 
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
@@ -33,22 +34,36 @@ def _load_vectorstore(idx_path: str, embed_model: str):
     embeddings = OpenAIEmbeddings(model=embed_model)
     return FAISS.load_local(idx_path, embeddings, allow_dangerous_deserialization=True)
 
-def _extract_id_title(doc) -> tuple[str, str]:
+def _extract_id_title(doc) -> Tuple[str, str]:
     meta = getattr(doc, "metadata", {}) or {}
     return meta.get("id", "unknown"), meta.get("title", "Untitled Case")
+
+def _get_meta(doc) -> Dict[str, Any]:
+    return getattr(doc, "metadata", {}) or {}
 
 # ----------------------------------------------------------
 # Models
 # ----------------------------------------------------------
-class CaseRequest(BaseModel):
-    query: str
-
 class CompareRequest(BaseModel):
     case_a: str
     case_b: str
 
 class SynthesizeRequest(BaseModel):
     queries: List[str]
+
+class CitationsRequest(BaseModel):
+    """Lookup citations for a case by ID or by query/topic."""
+    id: Optional[str] = None
+    query: Optional[str] = None
+    k_scan: int = 20                 # how many candidate docs to scan for cited_by
+    infer: bool = False              # try GPT-based inference when metadata missing
+
+class GraphRequest(BaseModel):
+    """Build a citation graph for given case IDs or queries."""
+    ids: Optional[List[str]] = None
+    queries: Optional[List[str]] = None
+    k_per_query: int = 3
+    include_inferred: bool = False   # allow GPT to infer links when metadata lacks them
 
 # ----------------------------------------------------------
 # Utilities
@@ -65,8 +80,29 @@ def _get_chat_model(temp: float = 0):
     model_name = os.getenv("LEXCHAIN_CHAT_MODEL", "gpt-4o-mini")
     return ChatOpenAI(model=model_name, temperature=temp)
 
+def _find_doc_by_id(retriever, case_id: str, fallback_k: int = 5):
+    """
+    Best-effort: search by ID first (exact match unlikely in vector space),
+    so we also try the ID and pieces of it, then fall back to top-k and
+    pick the doc whose metadata id matches when possible.
+    """
+    candidates = retriever.get_relevant_documents(case_id)
+    for d in candidates:
+        if _get_meta(d).get("id") == case_id:
+            return d
+    # Fallback scan: ask for some generic docs and try to match by id in metadata
+    more = retriever.get_relevant_documents(case_id.replace("_", " ")[:64])
+    for d in more:
+        if _get_meta(d).get("id") == case_id:
+            return d
+    if candidates:
+        return candidates[0]
+    # final fallback: broad query "case" to get something
+    broad = retriever.get_relevant_documents("case law " + case_id)[:fallback_k]
+    return broad[0] if broad else None
+
 # ==========================================================
-# /cases/semantic – Semantic Search
+# /cases/semantic – Semantic Search (3.1)
 # ==========================================================
 @router.get("/semantic")
 def semantic_search(query: str = Query(..., description="Search phrase or topic")):
@@ -82,7 +118,7 @@ def semantic_search(query: str = Query(..., description="Search phrase or topic"
     return {"query": query, "results": results}
 
 # ==========================================================
-# /cases/compare – Compare Two Cases
+# /cases/compare – Compare Two Cases (3.2)
 # ==========================================================
 @router.post("/compare")
 def compare_cases(request: CompareRequest):
@@ -90,10 +126,10 @@ def compare_cases(request: CompareRequest):
     llm = _get_chat_model()
 
     def _get_case_text(cid: str) -> str:
-        docs = retriever.get_relevant_documents(cid)
-        if not docs:
+        doc = _find_doc_by_id(retriever, cid) or retriever.get_relevant_documents(cid)[0]
+        if not doc:
             raise HTTPException(status_code=404, detail=f"Case not found: {cid}")
-        return docs[0].page_content
+        return doc.page_content
 
     text_a = _get_case_text(request.case_a)
     text_b = _get_case_text(request.case_b)
@@ -114,7 +150,7 @@ def compare_cases(request: CompareRequest):
     return {"case_a": request.case_a, "case_b": request.case_b, "comparison": answer}
 
 # ==========================================================
-# /cases/summarize – GPT Summary
+# /cases/summarize – GPT Summary (3.3)
 # ==========================================================
 @router.get("/summarize")
 def summarize_case(query: str = Query(..., description="Case name or topic")):
@@ -164,7 +200,7 @@ def analyze_case(query: str = Query(..., description="Search term or legal issue
     return {"id": cid, "title": title, "analysis": analysis.strip()}
 
 # ==========================================================
-# /cases/synthesize – Phase 3.5 Multi-Case Reasoning
+# /cases/synthesize – Multi-Case Reasoning (3.5)
 # ==========================================================
 @router.post("/synthesize")
 def synthesize_cases(request: SynthesizeRequest):
@@ -172,13 +208,11 @@ def synthesize_cases(request: SynthesizeRequest):
     Combine reasoning from multiple related cases to identify
     common issues, alignments, conflicts, and overall precedent trend.
     """
-    # Captain's Log:
-    # Purpose: Provide higher-order reasoning across multiple precedents.
     retriever = _get_retriever(k=2)
     llm = _get_chat_model(temp=0)
 
-    all_texts = []
-    summaries = []
+    all_texts: List[str] = []
+    summaries: List[str] = []
 
     for query in request.queries:
         docs = retriever.get_relevant_documents(query)
@@ -217,6 +251,162 @@ def synthesize_cases(request: SynthesizeRequest):
     }
 
 # ==========================================================
+# /cases/citations – Citation Lookup (3.6)
+# ==========================================================
+@router.post("/citations")
+def citations_lookup(req: CitationsRequest):
+    """
+    Return outbound citations and best-effort 'cited_by' set.
+    Uses metadata['citations'] if present; optionally infers with GPT.
+    """
+    retriever = _get_retriever(k=3)
+    llm = _get_chat_model(temp=0)
+
+    # Resolve target document
+    target_doc = None
+    target_id = None
+    target_title = None
+
+    if req.id:
+        target_doc = _find_doc_by_id(retriever, req.id)
+    if (not target_doc) and req.query:
+        docs = retriever.get_relevant_documents(req.query)
+        target_doc = docs[0] if docs else None
+
+    if not target_doc:
+        raise HTTPException(status_code=404, detail="Target case not found for citation lookup.")
+
+    target_id, target_title = _extract_id_title(target_doc)
+    target_meta = _get_meta(target_doc)
+    outbound = list(target_meta.get("citations", []) or [])
+
+    # Optional GPT inference for missing citations
+    if req.infer and not outbound:
+        inferred = llm.predict(f"""
+        From the following case text, list likely cited case titles as a JSON array of short strings.
+        Text:
+        {target_doc.page_content[:1800]}
+        """).strip()
+        outbound = [c.strip() for c in (inferred or "").strip("[]").split(",") if c.strip()]
+        # Note: these may be titles; frontend can use semantic search to resolve to IDs
+
+    # Best-effort cited_by: scan k candidates and check metadata.citations includes our target_id
+    cited_by: List[str] = []
+    scan_basis = target_title or target_id
+    candidates = retriever.get_relevant_documents(scan_basis)[:req.k_scan]
+    for d in candidates:
+        mid = _get_meta(d).get("id")
+        if not mid or mid == target_id:
+            continue
+        cites = _get_meta(d).get("citations", []) or []
+        if target_id in cites:
+            cited_by.append(mid)
+
+    return {
+        "id": target_id,
+        "title": target_title,
+        "citations": outbound,     # may be IDs or titles depending on your ingest metadata
+        "cited_by": cited_by
+    }
+
+# ==========================================================
+# /cases/graph – Citation Graph (3.6)
+# ==========================================================
+@router.post("/graph")
+def citation_graph(req: GraphRequest):
+    """
+    Build a citation graph for given case IDs or queries.
+    Returns nodes (id,label,court) and edges (source->target).
+    """
+    retriever = _get_retriever(k=max(3, req.k_per_query))
+    llm = _get_chat_model(temp=0)
+
+    # Collect seed documents from ids and/or queries
+    seed_docs = []
+    seen_ids = set()
+
+    if req.ids:
+        for cid in req.ids:
+            d = _find_doc_by_id(retriever, cid)
+            if d:
+                did = _get_meta(d).get("id")
+                if did and did not in seen_ids:
+                    seed_docs.append(d); seen_ids.add(did)
+
+    if req.queries:
+        for q in req.queries:
+            docs = retriever.get_relevant_documents(q)[:req.k_per_query]
+            for d in docs:
+                did = _get_meta(d).get("id")
+                if did and did not in seen_ids:
+                    seed_docs.append(d); seen_ids.add(did)
+
+    if not seed_docs:
+        raise HTTPException(status_code=404, detail="No seed cases found for graph.")
+
+    # Build node list
+    def node_from_doc(d) -> Dict[str, Any]:
+        m = _get_meta(d)
+        return {
+            "id": m.get("id", "unknown"),
+            "label": m.get("title", "Untitled Case"),
+            "court": m.get("court"),
+            "date": m.get("date"),
+        }
+
+    nodes = [node_from_doc(d) for d in seed_docs]
+    id_to_doc = { _get_meta(d).get("id"): d for d in seed_docs }
+
+    # Build edges from explicit metadata citations
+    edges: List[Dict[str, Any]] = []
+    for d in seed_docs:
+        src_id = _get_meta(d).get("id")
+        if not src_id:
+            continue
+        cites = _get_meta(d).get("citations", []) or []
+        for tgt in cites:
+            # If target not in graph yet, try to resolve it to a doc (optional)
+            if tgt not in id_to_doc:
+                resolved = _find_doc_by_id(retriever, tgt)
+                if resolved:
+                    nodes.append(node_from_doc(resolved))
+                    id_to_doc[_get_meta(resolved).get("id")] = resolved
+            edges.append({"source": src_id, "target": tgt, "type": "cites"})
+
+    # Optional: infer additional links if metadata is sparse
+    if req.include_inferred:
+        # Use GPT to guess referenced case titles/IDs from text; map them via semantic search
+        for d in seed_docs:
+            src_id = _get_meta(d).get("id")
+            if not src_id:
+                continue
+            inferred = llm.predict(f"""
+            From the following case text, list likely cited case titles as a JSON array of short strings.
+            Text:
+            {d.page_content[:1600]}
+            """).strip()
+
+            # Parse crude JSON array
+            raw_items = [c.strip().strip('"') for c in (inferred or "").strip("[]").split(",") if c.strip()]
+            for guess in raw_items[:5]:
+                # Resolve guess to an id by semantic search
+                hits = retriever.get_relevant_documents(guess)
+                if not hits:
+                    continue
+                tgt_id = _get_meta(hits[0]).get("id")
+                if not tgt_id:
+                    continue
+                if tgt_id not in id_to_doc:
+                    nodes.append(node_from_doc(hits[0]))
+                    id_to_doc[tgt_id] = hits[0]
+                edges.append({"source": src_id, "target": tgt_id, "type": "inferred"})
+
+    return {
+        "nodes": nodes,
+        "edges": edges
+    }
+
+# ==========================================================
 # Captain's Test Commands
 # ==========================================================
 # Run locally:
@@ -228,4 +418,6 @@ def synthesize_cases(request: SynthesizeRequest):
 # /cases/summarize?query=cellphone privacy
 # /cases/analyze?query=class action waiver
 # /cases/synthesize { "queries": ["arbitration class action", "employment arbitration"] }
+# /cases/citations { "id": "us-2011-scotus-concepcion", "k_scan": 20, "infer": true }
+# /cases/graph { "ids": ["us-2011-scotus-concepcion"], "queries": ["arbitration"], "k_per_query": 2, "include_inferred": false }
 # ==========================================================
