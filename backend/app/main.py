@@ -1,42 +1,30 @@
 ﻿# ==========================================================
-# LexChain FastAPI Main — routers: cases, ingest, qa
+# LexChain FastAPI Main
 # ==========================================================
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
-import os
 
-# Routers (relative imports because we are in backend/app/)
-from .routers import cases
-from .routers import ingest
-from .routers import qa
+# Routers
+from app.routers.cases import router as cases_router
+# If you have these modules already, keep them:
+# from app.routers import ingest, qa
 
-APP_NAME = "LexChain API"
-APP_VERSION = "0.1.0"
+app = FastAPI(title="LexChain API", version="0.0.1")
 
-def get_allowed_origins():
-    env = os.getenv(
-        "CORS_ALLOWED_ORIGINS",
-        "http://localhost:3000,http://127.0.0.1:3000"
-    )
-    return [o.strip() for o in env.split(",") if o.strip()]
-
-app = FastAPI(title=APP_NAME, version=APP_VERSION)
-
+# CORS (adjust as needed)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=get_allowed_origins(),
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Mount routers
-app.include_router(cases.router)
-app.include_router(ingest.router)
-app.include_router(qa.router)
-
-# Root → docs
+# Health & root
 @app.get("/")
 def root():
     return RedirectResponse(url="/docs")
@@ -47,8 +35,10 @@ def health():
 
 @app.get("/version")
 def version():
-    return {
-        "name": APP_NAME,
-        "version": APP_VERSION,
-        "env": os.getenv("LEXCHAIN_ENV", "dev")
-    }
+    return {"name": "LexChain API", "version": "0.0.1"}
+
+# Mount routers
+app.include_router(cases_router)
+# If present in your project, keep these lines:
+# app.include_router(ingest.router)
+# app.include_router(qa.router)
