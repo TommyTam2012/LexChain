@@ -1,20 +1,19 @@
 # ==========================================================
-# LexChain – Phase 3.4: Intelligent Legal Reasoning
+# LexChain – Phase 3.5: Multi-Case Synthesis / Chain of Precedents
 # ==========================================================
 # Captain's Log:
-# Purpose: Provide endpoints for legal case retrieval, comparison,
-# summarization, and analytical reasoning using FAISS + GPT.
-# Behavior: Maintains backward compatibility with previous phases.
+# Purpose: Extend LexChain to analyze multiple cases jointly.
+# Behavior: Synthesizes shared issues, alignments, and conflicts
+#            using FAISS retrieval + GPT reasoning.
 # ==========================================================
 
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
-from typing import Optional, Dict, Any
+from typing import List, Dict, Any
 import os
 
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain.chains import RetrievalQA
 
 # ----------------------------------------------------------
 # Router Initialization
@@ -22,24 +21,19 @@ from langchain.chains import RetrievalQA
 router = APIRouter(prefix="/cases", tags=["Cases"])
 
 # ----------------------------------------------------------
-# FAISS Helper Functions
+# FAISS Helpers
 # ----------------------------------------------------------
 def _get_index_path() -> str:
-    """Return FAISS index path from env var or default."""
     return os.getenv("LEXCHAIN_INDEX_PATH", "./data/indexes/faiss_v1")
 
 def _faiss_files_exist(p: str) -> bool:
-    """Check that FAISS index + pickle exist."""
     return os.path.exists(os.path.join(p, "index.faiss")) and os.path.exists(os.path.join(p, "index.pkl"))
 
 def _load_vectorstore(idx_path: str, embed_model: str):
-    """Load FAISS vectorstore safely."""
     embeddings = OpenAIEmbeddings(model=embed_model)
-    vs = FAISS.load_local(idx_path, embeddings, allow_dangerous_deserialization=True)
-    return vs
+    return FAISS.load_local(idx_path, embeddings, allow_dangerous_deserialization=True)
 
 def _extract_id_title(doc) -> tuple[str, str]:
-    """Extract ID and Title from FAISS doc metadata."""
     meta = getattr(doc, "metadata", {}) or {}
     return meta.get("id", "unknown"), meta.get("title", "Untitled Case")
 
@@ -52,6 +46,9 @@ class CaseRequest(BaseModel):
 class CompareRequest(BaseModel):
     case_a: str
     case_b: str
+
+class SynthesizeRequest(BaseModel):
+    queries: List[str]
 
 # ----------------------------------------------------------
 # Utilities
@@ -69,11 +66,10 @@ def _get_chat_model(temp: float = 0):
     return ChatOpenAI(model=model_name, temperature=temp)
 
 # ==========================================================
-#  /cases/semantic – Semantic Search
+# /cases/semantic – Semantic Search
 # ==========================================================
 @router.get("/semantic")
 def semantic_search(query: str = Query(..., description="Search phrase or topic")):
-    """Retrieve similar cases via semantic FAISS search."""
     retriever = _get_retriever()
     docs = retriever.get_relevant_documents(query)
     if not docs:
@@ -82,19 +78,14 @@ def semantic_search(query: str = Query(..., description="Search phrase or topic"
     results = []
     for doc in docs:
         cid, title = _extract_id_title(doc)
-        results.append({
-            "id": cid,
-            "title": title,
-            "snippet": doc.page_content[:300]
-        })
+        results.append({"id": cid, "title": title, "snippet": doc.page_content[:300]})
     return {"query": query, "results": results}
 
 # ==========================================================
-#  /cases/compare – Compare Two Cases
+# /cases/compare – Compare Two Cases
 # ==========================================================
 @router.post("/compare")
 def compare_cases(request: CompareRequest):
-    """Compare reasoning or holdings of two cases using GPT."""
     retriever = _get_retriever()
     llm = _get_chat_model()
 
@@ -108,7 +99,7 @@ def compare_cases(request: CompareRequest):
     text_b = _get_case_text(request.case_b)
 
     prompt = f"""
-    Compare the following two cases and summarize differences and similarities
+    Compare the following two cases and summarize similarities and differences
     in their legal reasoning and holdings.
 
     CASE A ({request.case_a}):
@@ -119,20 +110,14 @@ def compare_cases(request: CompareRequest):
 
     Provide a concise comparison.
     """
-
     answer = llm.predict(prompt)
-    return {
-        "case_a": request.case_a,
-        "case_b": request.case_b,
-        "comparison": answer
-    }
+    return {"case_a": request.case_a, "case_b": request.case_b, "comparison": answer}
 
 # ==========================================================
-#  /cases/summarize – GPT Summary
+# /cases/summarize – GPT Summary
 # ==========================================================
 @router.get("/summarize")
 def summarize_case(query: str = Query(..., description="Case name or topic")):
-    """Summarize the most relevant case."""
     retriever = _get_retriever(k=1)
     llm = _get_chat_model()
     docs = retriever.get_relevant_documents(query)
@@ -146,17 +131,10 @@ def summarize_case(query: str = Query(..., description="Case name or topic")):
     return {"id": cid, "title": title, "summary": summary}
 
 # ==========================================================
-#  /cases/analyze – Phase 3.4 Intelligent Reasoning
+# /cases/analyze – Structured Reasoning (3.4)
 # ==========================================================
 @router.get("/analyze")
 def analyze_case(query: str = Query(..., description="Search term or legal issue")):
-    """
-    Analyze case content to extract structured legal reasoning.
-    Returns: Issue, Holding, and Precedent Strength.
-    """
-    # Captain's Log:
-    # Purpose: Leverage FAISS + GPT to reason over top documents.
-    # Behavior: Synthesizes structured insights (issue, holding, precedent strength).
     retriever = _get_retriever(k=2)
     llm = _get_chat_model()
 
@@ -170,24 +148,72 @@ def analyze_case(query: str = Query(..., description="Search term or legal issue
 
     prompt = f"""
     You are a legal analysis assistant.
-    Analyze the following case passage and extract the following fields in JSON:
+    Analyze the following case passage and extract:
 
     {{
-      "issue": "What legal question the court addressed",
-      "holding": "How the court resolved it",
-      "precedent_strength": "High / Medium / Low based on its authority"
+      "issue": "Legal question addressed",
+      "holding": "Court's resolution",
+      "precedent_strength": "High / Medium / Low"
     }}
 
     Case: {title}
     Text:
     {content}
     """
-
     analysis = llm.predict(prompt)
+    return {"id": cid, "title": title, "analysis": analysis.strip()}
+
+# ==========================================================
+# /cases/synthesize – Phase 3.5 Multi-Case Reasoning
+# ==========================================================
+@router.post("/synthesize")
+def synthesize_cases(request: SynthesizeRequest):
+    """
+    Combine reasoning from multiple related cases to identify
+    common issues, alignments, conflicts, and overall precedent trend.
+    """
+    # Captain's Log:
+    # Purpose: Provide higher-order reasoning across multiple precedents.
+    retriever = _get_retriever(k=2)
+    llm = _get_chat_model(temp=0)
+
+    all_texts = []
+    summaries = []
+
+    for query in request.queries:
+        docs = retriever.get_relevant_documents(query)
+        if not docs:
+            continue
+        doc = docs[0]
+        cid, title = _extract_id_title(doc)
+        summaries.append(f"{title} ({cid})")
+        all_texts.append(f"Case: {title}\n\n{doc.page_content[:1500]}")
+
+    if not all_texts:
+        raise HTTPException(status_code=404, detail="No cases found for synthesis.")
+
+    joined_text = "\n\n---\n\n".join(all_texts)
+    prompt = f"""
+    You are LexChain, an AI legal analyst.
+    Given several related cases, produce a structured synthesis describing:
+
+    {{
+      "common_issue": "shared legal question among the cases",
+      "alignments": "which cases reach similar holdings",
+      "conflicts": "which cases diverge or conflict",
+      "precedent_trend": "overall trend (strengthening / diverging)",
+      "summary": "concise narrative of the combined reasoning"
+    }}
+
+    Analyze the following case materials:
+    {joined_text}
+    """
+
+    result = llm.predict(prompt)
     return {
-        "id": cid,
-        "title": title,
-        "analysis": analysis.strip()
+        "queries": request.queries,
+        "cases_considered": summaries,
+        "synthesis": result.strip()
     }
 
 # ==========================================================
@@ -201,4 +227,5 @@ def analyze_case(query: str = Query(..., description="Search term or legal issue
 # /cases/compare { "case_a": "us-2011-scotus-concepcion", "case_b": "us-2014-scotus-riley" }
 # /cases/summarize?query=cellphone privacy
 # /cases/analyze?query=class action waiver
+# /cases/synthesize { "queries": ["arbitration class action", "employment arbitration"] }
 # ==========================================================
