@@ -1,5 +1,5 @@
 ﻿# ==========================================================
-# LexChain FastAPI Main
+# LexChain FastAPI Main (中英双语版本)
 # ==========================================================
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,9 +10,24 @@ from app.routers.cases import router as cases_router
 # If you have these modules already, keep them:
 # from app.routers import ingest, qa
 
-app = FastAPI(title="LexChain API", version="0.0.1")
+# ----------------------------------------------------------
+# 🌐 Bilingual App Metadata / 中英文接口说明
+# ----------------------------------------------------------
+app = FastAPI(
+    title="LexChain 法律链 — AI法律研究助手 (AI Legal Research Assistant)",
+    description=(
+        "LexChain 是一个由人工智能驱动的法律案例检索与推理系统，"
+        "支持语义搜索、案例比较、摘要生成、法律推理与引用图谱可视化。\n\n"
+        "LexChain is an AI-powered legal research and reasoning platform. "
+        "It enables semantic retrieval, case comparison, summarization, "
+        "multi-case synthesis, and citation-graph visualization."
+    ),
+    version="0.0.1"
+)
 
+# ----------------------------------------------------------
 # CORS (adjust as needed)
+# ----------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -24,20 +39,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Health & root
+# ----------------------------------------------------------
+# Health & Root
+# ----------------------------------------------------------
 @app.get("/")
 def root():
+    """Redirect to Swagger UI / 重定向至 Swagger 文档界面"""
     return RedirectResponse(url="/docs")
 
 @app.get("/health")
 def health():
+    """健康检查 (Health Check)"""
     return {"status": "ok"}
 
 @app.get("/version")
 def version():
-    return {"name": "LexChain API", "version": "0.0.1"}
+    """版本信息 (Version Info)"""
+    return {"name": "LexChain API / 法律链接口", "version": "0.0.1"}
 
-# Mount routers
+# ----------------------------------------------------------
+# Mount Routers
+# ----------------------------------------------------------
 app.include_router(cases_router)
 # If present in your project, keep these lines:
 # app.include_router(ingest.router)
