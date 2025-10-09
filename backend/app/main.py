@@ -5,10 +5,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 
-# Routers
-from app.routers.cases import router as cases_router
-# If you have these modules already, keep them:
-# from app.routers import ingest, qa
+# Routers (package-relative imports from backend.app.*)
+from .routers.cases import router as cases_router
+from .routers import memory  # mounts /memory/* endpoints
 
 # ----------------------------------------------------------
 # 🌐 Bilingual App Metadata / 中英文接口说明
@@ -61,9 +60,9 @@ def version():
 # Mount Routers
 # ----------------------------------------------------------
 app.include_router(cases_router)
-from app.routers.memory import router as memory_router
-app.include_router(memory_router)
+app.include_router(memory.router)
 
-# If present in your project, keep these lines:
+# Optional existing modules
+# from .routers import ingest, qa
 # app.include_router(ingest.router)
 # app.include_router(qa.router)
