@@ -61,6 +61,9 @@ def version():
 # Mount Routers
 # ----------------------------------------------------------
 app.include_router(cases_router)
+from app.routers.memory import router as memory_router
+app.include_router(memory_router)
+
 # If present in your project, keep these lines:
 # app.include_router(ingest.router)
 # app.include_router(qa.router)
