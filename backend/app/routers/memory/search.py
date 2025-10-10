@@ -1,7 +1,8 @@
 ﻿from typing import Optional, List, Dict, Any, Tuple
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field
-from .shared import load_or_create_vectorstore, get_memory_path
+
+from .shared import load_or_create_vectorstore, get_memory_path, is_placeholder
 
 router = APIRouter()
 
@@ -42,8 +43,12 @@ def search_memory(
     results: List[SearchItem] = []
     for doc, score in pairs:
         meta = getattr(doc, "metadata", {}) or {}
+        # Skip internal bootstrap doc
+        if is_placeholder(meta):
+            continue
         if topic and meta.get("topic") != topic:
             continue
+
         results.append(SearchItem(
             text=doc.page_content if include_text else None,
             score=score,
