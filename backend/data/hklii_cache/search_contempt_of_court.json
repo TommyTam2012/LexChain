@@ -1,0 +1,27 @@
+{
+  "query": "contempt of court",
+  "ts": "2025-10-16T12:11:28",
+  "count": 5,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkdc/2012/706"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2002/290"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2015/2173"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1642"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1988/421"
+    }
+  ]
+}

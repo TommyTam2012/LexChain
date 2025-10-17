@@ -1,0 +1,53 @@
+{
+  "query": "cybercrime",
+  "ts": "2025-10-17T10:44:35",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "CHAN WING KA V. DOWELL INTERNATIONAL TRADING AND FORWARDING LTD | [2020] HKDC 1061 | HKLII",
+      "court": null,
+      "year": 2020,
+      "date": null,
+      "length": 22216,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2020/1061",
+      "ok": true
+    },
+    {
+      "title": "NICO CONSTANTIJN ANTONIUS SAMARA V. STIVE JEAN PAUL DAN ALSO KNOWN AS STEVE JEAN PAUL DAN, STIVE JEAN PAUL DAN AND STEVE JEAN PAUL DAN | [2018] HKCFI 1022 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": null,
+      "length": 28250,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2018/1022",
+      "ok": true
+    },
+    {
+      "title": "HKSAR V. LAU CHEUNG FAI | [2018] HKCFI 604 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": null,
+      "length": 25978,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2018/604",
+      "ok": true
+    },
+    {
+      "title": "GUAGUAS MUNICIPALES S.A V. BRIGHT MOON INTERNATIONAL TRADE CO. LTD | [2018] HKCFI 1716 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": null,
+      "length": 4318,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2018/1716",
+      "ok": true
+    },
+    {
+      "title": "HARJIT SINGH V. MR. LAW MAN CHING, VIO AND OTHERS | [2025] HKCFI 100 | HKLII",
+      "court": null,
+      "year": 2025,
+      "date": null,
+      "length": 4687,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2025/100",
+      "ok": true
+    }
+  ]
+}

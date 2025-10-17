@@ -1,0 +1,27 @@
+{
+  "query": "possession order",
+  "ts": "2025-10-17T10:41:33",
+  "count": 5,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/1558"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2001/34"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkdc/2009/113"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2020/2422"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2004/1014"
+    }
+  ]
+}

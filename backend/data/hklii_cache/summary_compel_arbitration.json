@@ -1,0 +1,71 @@
+{
+  "query": "compel arbitration",
+  "ts": "2025-10-11T21:05:15",
+  "total_found": 7,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "AIG INSURANCE HONG KONG LTD V. LYNN MCCULLOUGH AND ANOTHER | [2019] HKCFI 1649 | HKLII",
+      "court": null,
+      "year": 2019,
+      "date": null,
+      "length": 63738,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2019/1649",
+      "ok": true
+    },
+    {
+      "title": "MIKE GHIAS AND ANOTHER V. SIRNAOMICS LTD AND ANOTHER | [2025] HKCFI 4284 | HKLII",
+      "court": null,
+      "year": 2025,
+      "date": null,
+      "length": 48768,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2025/4284",
+      "ok": true
+    },
+    {
+      "title": "BEYOND THE NETWORK, LTD V. VECTONE LTD | [2005] HKCFI 1187 | HKLII",
+      "court": null,
+      "year": 2005,
+      "date": null,
+      "length": 19018,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2005/1187",
+      "ok": true
+    },
+    {
+      "title": "undefined | | HKLII",
+      "court": null,
+      "year": 2023,
+      "date": null,
+      "length": 658,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1995/281",
+      "ok": false
+    },
+    {
+      "title": "TECHTERYX LTD V. LEGACY TRUST COMPANY LTD AND OTHERS | [2025] HKCFI 787 | HKLII",
+      "court": null,
+      "year": 2025,
+      "date": "2025-10-20",
+      "length": 31138,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2025/787",
+      "ok": true
+    },
+    {
+      "title": "AIG INSURANCE HONG KONG LTD V. LYNN MCCULLOUGH AND ANOTHER | [2020] HKCFI 1793 | HKLII",
+      "court": null,
+      "year": 2020,
+      "date": null,
+      "length": 38464,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2020/1793",
+      "ok": true
+    },
+    {
+      "title": "undefined | | HKLII",
+      "court": null,
+      "year": 2023,
+      "date": null,
+      "length": 658,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/2710",
+      "ok": false
+    }
+  ]
+}

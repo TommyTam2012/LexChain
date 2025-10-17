@@ -1,0 +1,6 @@
+{
+  "query": "TOOLS_DIR = Path(__file__).parent",
+  "ts": "2025-10-16T11:56:22",
+  "count": 0,
+  "results": []
+}

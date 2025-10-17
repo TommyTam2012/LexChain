@@ -1,0 +1,53 @@
+{
+  "query": "constitutional challenge",
+  "ts": "2025-10-17T10:43:33",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "RE LEUNG KWAN TSAN KELVIN, A BANKRUPT | [2019] HKCFI 997 | HKLII",
+      "court": null,
+      "year": 2019,
+      "date": null,
+      "length": 9922,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2019/997",
+      "ok": true
+    },
+    {
+      "title": "LO KING YEUNG V. EDDIE CHU HOI DICK | [2018] HKCA 137 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": null,
+      "length": 10067,
+      "url": "https://www.hklii.hk/en/cases/hkca/2018/137",
+      "ok": true
+    },
+    {
+      "title": "RE DAVID PERRY, QC | [2020] HKCFI 1796 | HKLII",
+      "court": null,
+      "year": 2020,
+      "date": null,
+      "length": 5844,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2020/1796",
+      "ok": true
+    },
+    {
+      "title": "RE THE APPLICATION OF DINAH ROSE QC | [2017] HKCFI 595 | HKLII",
+      "court": null,
+      "year": 2017,
+      "date": null,
+      "length": 24372,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2017/595",
+      "ok": true
+    },
+    {
+      "title": "RE THE APPLICATION OF MONICA CARSS-FRISK QC | [2017] HKCFI 598 | HKLII",
+      "court": null,
+      "year": 2017,
+      "date": null,
+      "length": 24380,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2017/598",
+      "ok": true
+    }
+  ]
+}

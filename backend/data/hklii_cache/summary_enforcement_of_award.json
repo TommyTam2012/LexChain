@@ -1,0 +1,53 @@
+{
+  "query": "enforcement of award",
+  "ts": "2025-10-17T10:42:03",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "W V. AW | [2021] HKCFI 1707 | HKLII",
+      "court": null,
+      "year": 2021,
+      "date": null,
+      "length": 48231,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/1707",
+      "ok": true
+    },
+    {
+      "title": "宁波梅山保税港区和光泰润二号股权投资中心(有限合伙) V. 北京微影时代科技有限公司 | [2024] HKCFI 2723 | HKLII",
+      "court": null,
+      "year": 2024,
+      "date": null,
+      "length": 18493,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/2723",
+      "ok": true
+    },
+    {
+      "title": "WISDOM GLORY INVESTMENT LTD V. ADWO MEDIA HOLDING LTD | [2022] HKCA 685 | HKLII",
+      "court": null,
+      "year": 2022,
+      "date": "2025-01-02",
+      "length": 27130,
+      "url": "https://www.hklii.hk/en/cases/hkca/2022/685",
+      "ok": true
+    },
+    {
+      "title": "AW AND OTHERS V. PY AND ANOTHER | [2022] HKCFI 1397 | HKLII",
+      "court": null,
+      "year": 2022,
+      "date": null,
+      "length": 50180,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1397",
+      "ok": true
+    },
+    {
+      "title": "NG YUK KEUNG V. YAN XIAOJIE | [2018] HKDC 534 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": "2025-12-08",
+      "length": 43340,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2018/534",
+      "ok": true
+    }
+  ]
+}

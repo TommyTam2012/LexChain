@@ -1,0 +1,53 @@
+{
+  "query": "maintenance pending suit",
+  "ts": "2025-10-16T12:10:57",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "CHAN HO FONG V. CHAN FAT SHUI | [2003] HKCA 319 | HKLII",
+      "court": null,
+      "year": 2003,
+      "date": null,
+      "length": 11253,
+      "url": "https://www.hklii.hk/en/cases/hkca/2003/319",
+      "ok": true
+    },
+    {
+      "title": "LJ V. LWHH | [2003] HKCA 247 | HKLII",
+      "court": null,
+      "year": 2003,
+      "date": null,
+      "length": 15419,
+      "url": "https://www.hklii.hk/en/cases/hkca/2003/247",
+      "ok": true
+    },
+    {
+      "title": "HHH V. SWM | [2016] HKFC 108 | HKLII",
+      "court": null,
+      "year": 2016,
+      "date": null,
+      "length": 34824,
+      "url": "https://www.hklii.hk/en/cases/hkfc/2016/108",
+      "ok": true
+    },
+    {
+      "title": "YCKS V. MPKC | [2018] HKFC 57 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": null,
+      "length": 19652,
+      "url": "https://www.hklii.hk/en/cases/hkfc/2018/57",
+      "ok": true
+    },
+    {
+      "title": "LFW V. LSH AND OTHERS | [2015] HKFC 138 | HKLII",
+      "court": null,
+      "year": 2015,
+      "date": null,
+      "length": 22953,
+      "url": "https://www.hklii.hk/en/cases/hkfc/2015/138",
+      "ok": true
+    }
+  ]
+}

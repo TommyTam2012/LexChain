@@ -1,0 +1,26 @@
+{
+  "query": "stay of proceedings",
+  "ts": "2025-10-17T10:45:47",
+  "total_found": 2,
+  "total_extracted": 2,
+  "cases": [
+    {
+      "title": "ALEXINA INVESTMENTS LTD AND ANOTHER V. KEYSBERG LTD AND OTHERS | [2004] HKCFI 94 | HKLII",
+      "court": null,
+      "year": 2004,
+      "date": null,
+      "length": 6087,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2004/94",
+      "ok": true
+    },
+    {
+      "title": "DALMOR SHIPPING CO LTD V. KAN'S MARITIME CORPORATION | [1997] HKCFI 305 | HKLII",
+      "court": null,
+      "year": 1997,
+      "date": null,
+      "length": 14424,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1997/305",
+      "ok": true
+    }
+  ]
+}

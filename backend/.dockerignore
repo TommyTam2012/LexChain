@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Git & IDE
+.git
+.gitignore
+.vscode/
+.idea/
+
+# System junk
+.DS_Store
+Thumbs.db
+
+# Logs & cache
+*.log
+.cache/
+.pytest_cache/
+
+# Local data
+data/hklii_cache/
+data/tmp/

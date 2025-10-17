@@ -1,0 +1,53 @@
+{
+  "query": "set aside award",
+  "ts": "2025-10-16T10:43:38",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "AW AND OTHERS V. PY AND ANOTHER | [2022] HKCFI 1397 | HKLII",
+      "court": null,
+      "year": 2022,
+      "date": null,
+      "length": 50180,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1397",
+      "ok": true
+    },
+    {
+      "title": "WISDOM GLORY INVESTMENT LTD V. ADWO MEDIA HOLDING LTD | [2022] HKCA 685 | HKLII",
+      "court": null,
+      "year": 2022,
+      "date": "2025-01-02",
+      "length": 27130,
+      "url": "https://www.hklii.hk/en/cases/hkca/2022/685",
+      "ok": true
+    },
+    {
+      "title": "WISDOM GLORY INVESTMENT LTD V. ADWO MEDIA HOLDING LTD | [2022] HKCFI 1296 | HKLII",
+      "court": null,
+      "year": 2022,
+      "date": null,
+      "length": 7261,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1296",
+      "ok": true
+    },
+    {
+      "title": "W V. AW | [2021] HKCFI 1707 | HKLII",
+      "court": null,
+      "year": 2021,
+      "date": null,
+      "length": 48231,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/1707",
+      "ok": true
+    },
+    {
+      "title": "KZ V. KY | [2024] HKCFI 1880 | HKLII",
+      "court": null,
+      "year": 2024,
+      "date": null,
+      "length": 35262,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/1880",
+      "ok": true
+    }
+  ]
+}

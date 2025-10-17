@@ -1,0 +1,30 @@
+
+=== Nightly Crawl Started: 2025-10-14 11:03:19 ===
+[11:03:19] (1/9) Starting: arbitration
+[x] Error while crawling 'arbitration': Command '['python', 'tools/hklii_playwright_extract.py', '--query', 'arbitration', '--max', '30']' returned non-zero exit status 1.
+
+=== Nightly Crawl Started: 2025-10-14 11:06:23 ===
+[11:06:23] (1/9) Starting: arbitration
+[x] Error while crawling 'arbitration': Command '['python', 'tools/hklii_playwright_extract.py', '--query', 'arbitration', '--max', '30']' returned non-zero exit status 1.
+
+=== Nightly Crawl Started: 2025-10-14 11:09:03 ===
+[11:09:03] (1/9) Starting: arbitration
+[x] Error while crawling 'arbitration': Command '['python', 'tools/hklii_playwright_extract.py', '--query', 'arbitration', '--max', '30']' returned non-zero exit status 1.
+[✓] Finished: arbitration at 11:10:18
+[11:10:18] (2/9) Starting: stay of proceedings
+[x] Error while crawling 'stay of proceedings': Command '['python', 'tools/hklii_playwright_extract.py', '--query', 'stay of proceedings', '--max', '30']' returned non-zero exit status 1.
+
+=== Nightly Crawl Started: 2025-10-14 11:14:01 ===
+[11:14:01] (1/9) Starting: arbitration
+[x] Error while crawling 'arbitration': Command '['python', 'tools/hklii_playwright_extract.py', '--query', 'arbitration', '--max', '30']' returned non-zero exit status 1.
+
+=== Nightly Crawl Started: 2025-10-14 11:20:04 ===
+[11:20:04] (1/9) Starting: arbitration
+[✓] Finished: arbitration at 11:22:30
+[11:22:30] (2/9) Starting: stay of proceedings
+[✓] Finished: stay of proceedings at 11:24:45
+[11:24:45] (3/9) Starting: enforcement of award
+[✓] Finished: enforcement of award at 11:26:23
+[11:26:23] (4/9) Starting: set aside award
+[✓] Finished: set aside award at 11:28:05
+[11:28:05] (5/9) Starting: costs of arbitration

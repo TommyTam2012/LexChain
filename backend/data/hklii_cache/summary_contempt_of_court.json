@@ -1,0 +1,53 @@
+{
+  "query": "contempt of court",
+  "ts": "2025-10-16T12:11:39",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "CHAN KIN MAN V. CHEUK SIU TONG | [2012] HKDC 706 | HKLII",
+      "court": null,
+      "year": 2012,
+      "date": null,
+      "length": 11200,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2012/706",
+      "ok": true
+    },
+    {
+      "title": "SECRETARY FOR JUSTICE V. THE SUN NEWS PUBLISHER LTD. AND ANOTHER | [2002] HKCFI 290 | HKLII",
+      "court": null,
+      "year": 2002,
+      "date": null,
+      "length": 19836,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2002/290",
+      "ok": true
+    },
+    {
+      "title": "CHOY BING WING V. HONG KONG INSTITUTE OF ENGINEERS | [2015] HKCFI 2173 | HKLII",
+      "court": null,
+      "year": 2016,
+      "date": null,
+      "length": 24832,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2015/2173",
+      "ok": true
+    },
+    {
+      "title": "SECRETARY FOR JUSTICE V. SUDEWO | [2022] HKCFI 1642 | HKLII",
+      "court": null,
+      "year": 2022,
+      "date": null,
+      "length": 10898,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1642",
+      "ok": true
+    },
+    {
+      "title": "GRAND UNION INSURANCE CO LTD V. CLYDE & CO (A FIRM) AND OTHERS | [1988] HKCFI 421 | HKLII",
+      "court": null,
+      "year": 1988,
+      "date": null,
+      "length": 22968,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1988/421",
+      "ok": true
+    }
+  ]
+}

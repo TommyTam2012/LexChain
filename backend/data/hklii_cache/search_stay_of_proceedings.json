@@ -1,0 +1,15 @@
+{
+  "query": "stay of proceedings",
+  "ts": "2025-10-17T10:45:43",
+  "count": 2,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2004/94"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1997/305"
+    }
+  ]
+}

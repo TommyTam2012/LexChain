@@ -1,0 +1,27 @@
+{
+  "query": "maintenance pending suit",
+  "ts": "2025-10-16T12:10:46",
+  "count": 5,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/2003/319"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/2003/247"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkfc/2016/108"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkfc/2018/57"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkfc/2015/138"
+    }
+  ]
+}

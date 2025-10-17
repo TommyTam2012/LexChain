@@ -1,0 +1,62 @@
+{
+  "query": "kompetenz-kompetenz",
+  "ts": "2025-10-16T10:51:40",
+  "total_found": 6,
+  "total_extracted": 6,
+  "cases": [
+    {
+      "title": "廈門新景地集團有限公司 FORMERLY KNOWN AS 廈門市鑫新景地房地產有限公司 V. ETON PROPERTIES LTD AND ANOTHER | [2023] HKCFI 1327 | HKLII",
+      "court": null,
+      "year": 2023,
+      "date": null,
+      "length": 42939,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2023/1327",
+      "ok": true
+    },
+    {
+      "title": "WING BO BUILDING CONSTRUCTION CO LTD V. DISCREET LTD | [2016] HKCFI 485 | HKLII",
+      "court": null,
+      "year": 2016,
+      "date": null,
+      "length": 55704,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2016/485",
+      "ok": true
+    },
+    {
+      "title": "THE INCORPORATED OWNERS OF HAMDEN COURT V. MEGA MILES CONSTRUCTION CO LTD | [2015] HKCFI 928 | HKLII",
+      "court": null,
+      "year": 2015,
+      "date": null,
+      "length": 53586,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2015/928",
+      "ok": true
+    },
+    {
+      "title": "DP WORLD DJIBOUTI FZCO AND OTHERS V. CHINA MERCHANTS PORT HOLDINGS CO LTD | [2019] HKCFI 3104 | HKLII",
+      "court": null,
+      "year": 2019,
+      "date": null,
+      "length": 92127,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2019/3104",
+      "ok": true
+    },
+    {
+      "title": "C V. D | [2023] HKCFA 16 | HKLII",
+      "court": null,
+      "year": 2023,
+      "date": "2025-01-02",
+      "length": 123397,
+      "url": "https://www.hklii.hk/en/cases/hkcfa/2023/16",
+      "ok": true
+    },
+    {
+      "title": "LAU LAN YING V. TOP HILL CO AND ANOTHER | [2021] HKCFI 290 | HKLII",
+      "court": null,
+      "year": 2021,
+      "date": "2025-10-02",
+      "length": 150261,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/290",
+      "ok": true
+    }
+  ]
+}

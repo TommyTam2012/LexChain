@@ -1,0 +1,53 @@
+{
+  "query": "possession order",
+  "ts": "2025-10-17T10:41:44",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "FUBON BANK (HONG KONG) LTD V. NG WAI KONG | [2021] HKCFI 1558 | HKLII",
+      "court": null,
+      "year": 2021,
+      "date": null,
+      "length": 8622,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/1558",
+      "ok": true
+    },
+    {
+      "title": "YU TAI HING CO. LTD. V. SOLAR LIGHT INVESTMENT LTD. AND OTHERS | [2001] HKCFI 34 | HKLII",
+      "court": null,
+      "year": 2001,
+      "date": "2025-10-08",
+      "length": 9248,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2001/34",
+      "ok": true
+    },
+    {
+      "title": "NAM SHUM LAND INVESTMENT CO LTD V. 郭村 | [2009] HKDC 113 | HKLII",
+      "court": null,
+      "year": 2009,
+      "date": null,
+      "length": 20392,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2009/113",
+      "ok": true
+    },
+    {
+      "title": "SUN HUNG KAI CREDIT LTD V. WONG PO LING | [2020] HKCFI 2422 | HKLII",
+      "court": null,
+      "year": 2020,
+      "date": null,
+      "length": 7002,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2020/2422",
+      "ok": true
+    },
+    {
+      "title": "STANDARD CHARTERED BANK V. LUK SHIU WING AND ANOTHER | [2004] HKCFI 1014 | HKLII",
+      "court": null,
+      "year": 2004,
+      "date": null,
+      "length": 4383,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2004/1014",
+      "ok": true
+    }
+  ]
+}

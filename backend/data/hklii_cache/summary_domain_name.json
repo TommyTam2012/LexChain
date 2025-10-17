@@ -1,0 +1,53 @@
+{
+  "query": "domain name",
+  "ts": "2025-10-17T10:43:53",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "JUICY COUTURE, INC. V. BELLA INTERNATIONAL LTD T/A JUICY GIRL AND OTHERS | [2009] HKCFI 1135 | HKLII",
+      "court": null,
+      "year": 2009,
+      "date": null,
+      "length": 10849,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2009/1135",
+      "ok": true
+    },
+    {
+      "title": "YEUNG MAN SEK EDMOND V. GOOGLE (HONG KONG)LTD | [2014] HKDC 274 | HKLII",
+      "court": null,
+      "year": 2014,
+      "date": null,
+      "length": 9308,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2014/274",
+      "ok": true
+    },
+    {
+      "title": "ADVANCED CONNECTION LTD V. ABLE TECHNOLOGY (HONG KONG) LTD AND OTHERS | [2018] HKCFI 2465 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": null,
+      "length": 15971,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2018/2465",
+      "ok": true
+    },
+    {
+      "title": "ADVANCED CONNECTION LTD V. ABLE TECHNOLOGY (HONG KONG) LTD AND OTHERS | [2019] HKCA 1092 | HKLII",
+      "court": null,
+      "year": 2019,
+      "date": "2025-10-02",
+      "length": 19291,
+      "url": "https://www.hklii.hk/en/cases/hkca/2019/1092",
+      "ok": true
+    },
+    {
+      "title": "JUICY COUTURE, INC. V. BELLA INTERNATIONAL LIMITED T/A JUICY GIRL AND OTHERS | [2010] HKCA 95 | HKLII",
+      "court": null,
+      "year": 2010,
+      "date": null,
+      "length": 5639,
+      "url": "https://www.hklii.hk/en/cases/hkca/2010/95",
+      "ok": true
+    }
+  ]
+}

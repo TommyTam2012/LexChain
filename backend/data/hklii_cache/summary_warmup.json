@@ -1,0 +1,17 @@
+{
+  "query": "warmup",
+  "ts": "2025-10-17T10:41:02",
+  "total_found": 1,
+  "total_extracted": 1,
+  "cases": [
+    {
+      "title": "ST OTHERWISE SST V. MFP | [2022] HKFC 168 | HKLII",
+      "court": null,
+      "year": 2010,
+      "date": "2010-09-08",
+      "length": 92121,
+      "url": "https://www.hklii.hk/en/cases/hkfc/2022/168",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "query": "costs of arbitration",
+  "ts": "2025-10-16T10:45:23",
+  "total_found": 7,
+  "total_extracted": 7,
+  "cases": [
+    {
+      "title": "CHOI CHUEN YAU T/A CUTTING DE HEART AND CUTTING DE HEART NO 2 AND ANOTHER V. THE PRUDENTIAL ASSURANCE CO LTD | [2006] HKCA 545 | HKLII",
+      "court": null,
+      "year": 2006,
+      "date": null,
+      "length": 31076,
+      "url": "https://www.hklii.hk/en/cases/hkca/2006/545",
+      "ok": true
+    },
+    {
+      "title": "ITIRO CORPORATION BVI V. THE OWNER AND/OR DEMISED CHARTERERS OF THE SHIP OR VESSEL “ANGELIC GLORY” | [2021] HKCFI 1192 | HKLII",
+      "court": null,
+      "year": 2021,
+      "date": null,
+      "length": 4397,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/1192",
+      "ok": true
+    },
+    {
+      "title": "RE S Y ENGINEERING CO. LTD. | [2000] HKCFI 1058 | HKLII",
+      "court": null,
+      "year": 2000,
+      "date": null,
+      "length": 9637,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2000/1058",
+      "ok": true
+    },
+    {
+      "title": "UDL HOLDINGS LTD AND ANOTHER V. LEUNG YUET KEUNG AND ANOTHER | [2004] HKCA 110 | HKLII",
+      "court": null,
+      "year": 2004,
+      "date": null,
+      "length": 15636,
+      "url": "https://www.hklii.hk/en/cases/hkca/2004/110",
+      "ok": true
+    },
+    {
+      "title": "RE KENWORTH ENGINEERING LTD V. | [2005] HKCFI 78 | HKLII",
+      "court": null,
+      "year": 2005,
+      "date": null,
+      "length": 49820,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2005/78",
+      "ok": true
+    },
+    {
+      "title": "FUNG HING CHIU CYRIL V. HENRY WAI & CO (A FIRM) | [2018] HKCFI 31 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": null,
+      "length": 47894,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2018/31",
+      "ok": true
+    },
+    {
+      "title": "RE PROMAN INTERNATIONAL LTD | [2022] HKCFI 1450 | HKLII",
+      "court": null,
+      "year": 2016,
+      "date": null,
+      "length": 60656,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1450",
+      "ok": true
+    }
+  ]
+}

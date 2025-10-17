@@ -1,0 +1,31 @@
+{
+  "query": "kompetenz-kompetenz",
+  "ts": "2025-10-16T11:01:44",
+  "count": 6,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2023/1327"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2016/485"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2015/928"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2019/3104"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfa/2023/16"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/290"
+    }
+  ]
+}

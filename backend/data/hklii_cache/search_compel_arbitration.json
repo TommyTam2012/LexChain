@@ -1,0 +1,35 @@
+{
+  "query": "compel arbitration",
+  "ts": "2025-10-11T21:04:59",
+  "count": 7,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2019/1649"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2025/4284"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2005/1187"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1995/281"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2025/787"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2020/1793"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/2710"
+    }
+  ]
+}

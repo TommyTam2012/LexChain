@@ -1,0 +1,27 @@
+{
+  "query": "set aside award",
+  "ts": "2025-10-16T10:56:01",
+  "count": 5,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1397"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/2022/685"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2022/1296"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2021/1707"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/1880"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "query": "assault occasioning actual bodily harm",
+  "ts": "2025-10-17T10:41:24",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "HKSAR V. CHAN YIU MING | [1999] HKCFI 151 | HKLII",
+      "court": null,
+      "year": 1999,
+      "date": null,
+      "length": 4959,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1999/151",
+      "ok": true
+    },
+    {
+      "title": "THE QUEEN V. YEUNG KIT SUM | [1988] HKCFI 140 | HKLII",
+      "court": null,
+      "year": 1988,
+      "date": null,
+      "length": 5104,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1988/140",
+      "ok": true
+    },
+    {
+      "title": "R. V. KWAN WAI MAN, ALEXANDER | [1995] HKCA 335 | HKLII",
+      "court": null,
+      "year": 1995,
+      "date": null,
+      "length": 5311,
+      "url": "https://www.hklii.hk/en/cases/hkca/1995/335",
+      "ok": true
+    },
+    {
+      "title": "HKSAR V. LAM YUET PO | [2009] HKDC 1429 | HKLII",
+      "court": null,
+      "year": 2009,
+      "date": null,
+      "length": 3311,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2009/1429",
+      "ok": true
+    },
+    {
+      "title": "HKSAR V. CHENG KA KEUNG DENDY AND OTHERS | [2000] HKCFI 1177 | HKLII",
+      "court": null,
+      "year": 2000,
+      "date": null,
+      "length": 12997,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2000/1177",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "query": "quantum meruit",
+  "ts": "2025-10-17T10:43:12",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "CHOY BING WING T/A BING CHOY & ASSOCIATES V. THE HONG KONG & SHANGHAI HOTELS, LTD. | [1998] HKCA 580 | HKLII",
+      "court": "Court of Appeal",
+      "year": 1998,
+      "date": null,
+      "length": 11805,
+      "url": "https://www.hklii.hk/en/cases/hkca/1998/580",
+      "ok": true
+    },
+    {
+      "title": "FOUR SEAS UNION（HOLDINGS）LTD. T/A FOUR SEAS UNION CONSTRUCTION CO. V. HONG KONG & MACAU SCENT ON ENGINEERING & CONSTRUCTION LTD. | [2003] HKCFI 687 | HKLII",
+      "court": null,
+      "year": 2003,
+      "date": null,
+      "length": 19962,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2003/687",
+      "ok": true
+    },
+    {
+      "title": "BATES HONG KONG LTD V. CASH ASSETS LTD AND ANOTHER | [2006] HKCA 444 | HKLII",
+      "court": null,
+      "year": 2003,
+      "date": null,
+      "length": 23669,
+      "url": "https://www.hklii.hk/en/cases/hkca/2006/444",
+      "ok": true
+    },
+    {
+      "title": "BATES CHINA LTD V. CASH ASSETS LTD AND ANOTHER | [2006] HKCA 445 | HKLII",
+      "court": null,
+      "year": 2003,
+      "date": null,
+      "length": 23665,
+      "url": "https://www.hklii.hk/en/cases/hkca/2006/445",
+      "ok": true
+    },
+    {
+      "title": "CEMAC (HONG KONG) LTD V. OCEAN & COLMAN CONSTRUCTION LTD | [2009] HKDC 267 | HKLII",
+      "court": null,
+      "year": 2009,
+      "date": null,
+      "length": 9687,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2009/267",
+      "ok": true
+    }
+  ]
+}

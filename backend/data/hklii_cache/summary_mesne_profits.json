@@ -1,0 +1,53 @@
+{
+  "query": "mesne profits",
+  "ts": "2025-10-16T12:11:19",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "DONALD W. SHIELDS V. MARY CHAN (OTHERWISE KNOWN AS GING TAK CHOW OTHERWISE KNOWN AS MARY CHAN PO MAN) | [1972] HKCA 248 | HKLII",
+      "court": null,
+      "year": 1972,
+      "date": null,
+      "length": 17573,
+      "url": "https://www.hklii.hk/en/cases/hkca/1972/248",
+      "ok": true
+    },
+    {
+      "title": "NG CHI WING AND ANOTHER V. MOK CHUNG TIM T/A MOK KIM KEE | [1982] HKCFI 83 | HKLII",
+      "court": null,
+      "year": 1982,
+      "date": null,
+      "length": 7800,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1982/83",
+      "ok": true
+    },
+    {
+      "title": "HSBC PRIVATE TRUSTEE (HONG KONG) LTD V. AU YEUNG CHUNG | [2008] HKCFI 954 | HKLII",
+      "court": null,
+      "year": 2008,
+      "date": null,
+      "length": 11375,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2008/954",
+      "ok": true
+    },
+    {
+      "title": "WONG CHUN KWONG AND ANOTHER V. WONG HON TOO AND OTHERS | [1995] HKCFI 33 | HKLII",
+      "court": null,
+      "year": 1995,
+      "date": null,
+      "length": 8377,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1995/33",
+      "ok": true
+    },
+    {
+      "title": "BANK OF CHINA (HONG KONG) LTD V. SZE WANG AND ANOTHER | [2004] HKCFI 55 | HKLII",
+      "court": null,
+      "year": 2004,
+      "date": null,
+      "length": 14568,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2004/55",
+      "ok": true
+    }
+  ]
+}

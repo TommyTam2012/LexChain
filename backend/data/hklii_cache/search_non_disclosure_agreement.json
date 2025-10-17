@@ -1,0 +1,27 @@
+{
+  "query": "non-disclosure agreement",
+  "ts": "2025-10-17T10:45:05",
+  "count": 5,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkdc/2009/82"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkdc/2011/1473"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2002/732"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkdc/2014/1149"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1988/258"
+    }
+  ]
+}

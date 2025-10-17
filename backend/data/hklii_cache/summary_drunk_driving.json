@@ -1,0 +1,53 @@
+{
+  "query": "drunk driving",
+  "ts": "2025-10-17T10:42:23",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "HKSAR V. NG HON MAN | [2008] HKCFI 1338 | HKLII",
+      "court": null,
+      "year": 2008,
+      "date": null,
+      "length": 8401,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2008/1338",
+      "ok": true
+    },
+    {
+      "title": "HKSAR V. WONG WING KIN | [2023] HKCFI 940 | HKLII",
+      "court": null,
+      "year": 2023,
+      "date": null,
+      "length": 6321,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2023/940",
+      "ok": true
+    },
+    {
+      "title": "HKSAR V. WONG SHU FUNG | [2024] HKDC 1963 | HKLII",
+      "court": null,
+      "year": 2024,
+      "date": null,
+      "length": 8922,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2024/1963",
+      "ok": true
+    },
+    {
+      "title": "HKSAR V. YIP WING TAI | [2024] HKCFI 2874 | HKLII",
+      "court": null,
+      "year": 2024,
+      "date": null,
+      "length": 9030,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/2874",
+      "ok": true
+    },
+    {
+      "title": "HKSAR V. EKSTROM PATRIK TOBIAS | [2024] HKCFI 3592 | HKLII",
+      "court": null,
+      "year": 2024,
+      "date": null,
+      "length": 11123,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/3592",
+      "ok": true
+    }
+  ]
+}

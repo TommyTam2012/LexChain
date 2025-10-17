@@ -1,0 +1,27 @@
+{
+  "query": "domain name",
+  "ts": "2025-10-17T10:43:43",
+  "count": 5,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2009/1135"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkdc/2014/274"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2018/2465"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/2019/1092"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/2010/95"
+    }
+  ]
+}

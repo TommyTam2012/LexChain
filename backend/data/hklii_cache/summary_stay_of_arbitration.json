@@ -1,0 +1,35 @@
+{
+  "query": "stay of arbitration",
+  "ts": "2025-10-11T21:03:42",
+  "total_found": 3,
+  "total_extracted": 3,
+  "cases": [
+    {
+      "title": "POON WING KEE METAL WORK V. WING HONG CONTRACTORS LTD | [2005] HKDC 84 | HKLII",
+      "court": null,
+      "year": 2002,
+      "date": null,
+      "length": 98654,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2005/84",
+      "ok": true
+    },
+    {
+      "title": "WOLIK LTD V. WING HONG CONTRACTORS LTD | [2005] HKDC 85 | HKLII",
+      "court": null,
+      "year": 2002,
+      "date": null,
+      "length": 98639,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2005/85",
+      "ok": true
+    },
+    {
+      "title": "DÉCOR FLOORS ENGINEERING LTD V. WING HONG CONTRACTORS LTD AND ANOTHER | [2005] HKDC 83 | HKLII",
+      "court": null,
+      "year": 2002,
+      "date": null,
+      "length": 98666,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2005/83",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "query": "HKIAC",
+  "ts": "2025-10-17T10:44:55",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "WELTIME HONG KONG LTD. V. KEN FORWARD ENGINEERING LTD. | [2000] HKCFI 1144 | HKLII",
+      "court": null,
+      "year": 2000,
+      "date": "2025-10-19",
+      "length": 22232,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2000/1144",
+      "ok": true
+    },
+    {
+      "title": "WELTIME HONG KONG LTD. V. KEN FORWARD ENGINEERING LTD. | [2000] HKCFI 199 | HKLII",
+      "court": null,
+      "year": 2000,
+      "date": "2025-10-19",
+      "length": 22232,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2000/199",
+      "ok": true
+    },
+    {
+      "title": "HEALTHY SUN LTD. V. KEN FORWARD ENGINEERING LTD. | [2000] HKCFI 198 | HKLII",
+      "court": null,
+      "year": 2000,
+      "date": "2025-10-19",
+      "length": 22218,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2000/198",
+      "ok": true
+    },
+    {
+      "title": "PAN OCEAN CONTAINER SUPPLIERS CO LTD V. SPINNAKER EQUIPMENT SERVICES INC | [2024] HKCFI 1753 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": "2003-01-02",
+      "length": 77422,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2024/1753",
+      "ok": true
+    },
+    {
+      "title": "GONG BENHAI V. HONG KONG INTERNATIONAL ARBITRATION CENTRE | [2014] HKCFI 737 | HKLII",
+      "court": null,
+      "year": 2014,
+      "date": "0105-10-17",
+      "length": 17842,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2014/737",
+      "ok": true
+    }
+  ]
+}

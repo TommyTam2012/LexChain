@@ -1,0 +1,53 @@
+{
+  "query": "non-disclosure agreement",
+  "ts": "2025-10-17T10:45:15",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "CHESAPEAKE ASIA-PACIFIC LTD V. NIRVANA (ASIA) LTD AND OTHERS | [2009] HKDC 82 | HKLII",
+      "court": null,
+      "year": 2009,
+      "date": null,
+      "length": 23985,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2009/82",
+      "ok": true
+    },
+    {
+      "title": "FLYING DRAGON ELECTRONIC CO., LTD V. KWAN SUN YU | [2011] HKDC 1473 | HKLII",
+      "court": null,
+      "year": 2011,
+      "date": null,
+      "length": 25240,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2011/1473",
+      "ok": true
+    },
+    {
+      "title": "PREMIERE AGRI TECHNOLOGIES ASIA INC AND ANOTHER V. WONG SIU HUNG JOHN AND ANOTHER | [2002] HKCFI 732 | HKLII",
+      "court": null,
+      "year": 2002,
+      "date": null,
+      "length": 12932,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2002/732",
+      "ok": true
+    },
+    {
+      "title": "HO MIU HA FORMERLY T/A GREAT ENTERPRISE INTERNATIONAL CO. V. LI YEE HUNG | [2014] HKDC 1149 | HKLII",
+      "court": null,
+      "year": 2014,
+      "date": null,
+      "length": 23768,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2014/1149",
+      "ok": true
+    },
+    {
+      "title": "KARS AISA LIMITED V. RISHI KUMAR BHATNAGAR AND ANOTHER | [1988] HKCFI 258 | HKLII",
+      "court": null,
+      "year": 1988,
+      "date": null,
+      "length": 21702,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/1988/258",
+      "ok": true
+    }
+  ]
+}

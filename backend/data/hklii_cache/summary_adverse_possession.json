@@ -1,0 +1,53 @@
+{
+  "query": "adverse possession",
+  "ts": "2025-10-17T10:44:15",
+  "total_found": 5,
+  "total_extracted": 5,
+  "cases": [
+    {
+      "title": "MONAT INVESTMENT LTD V. ALL PERSON(S) IN OCCUPATION OF PART OF THE REMAINING PORTION OF LOT NO 591 IN MUI WO D.D. 4 NO.16 MA PO TSUEN, MUI WO, LANTAU ISLAND AND ANOTHER | [2020] HKCFI 1970 | HKLII",
+      "court": null,
+      "year": 2020,
+      "date": "2025-02-02",
+      "length": 79105,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2020/1970",
+      "ok": true
+    },
+    {
+      "title": "TANG MOON LAM, THE PERSON APPOINTED TO REPRESENT THE ESTATE OF TANG SHAU KI, DECEASED (BY ORDER DATED 25 JUNE 2014) V. TANG YING YEUNG | [2019] HKCA 1102 | HKLII",
+      "court": null,
+      "year": 2014,
+      "date": "2025-10-01",
+      "length": 39910,
+      "url": "https://www.hklii.hk/en/cases/hkca/2019/1102",
+      "ok": true
+    },
+    {
+      "title": "LAW PO LIN V. HAU KWAI FAT AND OTHERS | [2018] HKCFI 1345 | HKLII",
+      "court": null,
+      "year": 2018,
+      "date": "0347-10-17",
+      "length": 40948,
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2018/1345",
+      "ok": true
+    },
+    {
+      "title": "CHOW YUEN LING, THE ADMINISTRATRIX OF THE ESTATE OF CHOW PUI KEE, DECEASED V. KWAN LAU YING | [2014] HKDC 836 | HKLII",
+      "court": null,
+      "year": 2014,
+      "date": null,
+      "length": 21025,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2014/836",
+      "ok": true
+    },
+    {
+      "title": "THE PERSONAL REPRESENTATIVE OF LAU FUNG CHIM V. LAU SIU KWONG DAVID AND OTHERS | [2001] HKDC 126 | HKLII",
+      "court": null,
+      "year": 2001,
+      "date": null,
+      "length": 17608,
+      "url": "https://www.hklii.hk/en/cases/hkdc/2001/126",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "query": "quantum meruit",
+  "ts": "2025-10-17T10:43:01",
+  "count": 5,
+  "results": [
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/1998/580"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkcfi/2003/687"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/2006/444"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkca/2006/445"
+    },
+    {
+      "title": "case",
+      "url": "https://www.hklii.hk/en/cases/hkdc/2009/267"
+    }
+  ]
+}

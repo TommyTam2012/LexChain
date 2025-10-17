@@ -1,0 +1,50 @@
+
+=== Nightly Crawl Started: 2025-10-16 10:37:38 ===
+[✓] Warm-up completed successfully.
+[10:38:18] (1/9) Starting: arbitration
+[✓] Finished: arbitration at 10:38:36
+[10:39:51] (2/9) Starting: stay of proceedings
+[✓] Finished: stay of proceedings at 10:40:16
+[10:41:31] (3/9) Starting: enforcement of award
+[✓] Finished: enforcement of award at 10:41:57
+[10:43:12] (4/9) Starting: set aside award
+[✓] Finished: set aside award at 10:43:38
+[10:44:53] (5/9) Starting: costs of arbitration
+[✓] Finished: costs of arbitration at 10:45:24
+[10:46:39] (6/9) Starting: anti-suit injunction
+[✓] Finished: anti-suit injunction at 10:47:39
+[10:48:54] (7/9) Starting: seat of arbitration
+[✓] Finished: seat of arbitration at 10:50:00
+[10:51:15] (8/9) Starting: kompetenz-kompetenz
+
+=== Nightly Crawl Started: 2025-10-16 10:51:18 ===
+[!] Warm-up failed (non-fatal): Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'warmup', '--max', '1']' returned non-zero exit status 1.
+[10:51:28] (1/9) Starting: arbitration
+[✓] Finished: kompetenz-kompetenz at 10:51:40
+[x] Error while crawling 'arbitration': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'arbitration', '--max', '30']' returned non-zero exit status 1.
+[10:52:55] (9/9) Starting: Model Law
+[10:52:56] (2/9) Starting: stay of proceedings
+[x] Error while crawling 'stay of proceedings': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'stay of proceedings', '--max', '30']' returned non-zero exit status 1.
+[✓] Finished: Model Law at 10:53:41
+[10:54:23] (3/9) Starting: enforcement of award
+[x] Error while crawling 'enforcement of award': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'enforcement of award', '--max', '30']' returned non-zero exit status 1.
+=== Nightly Crawl Completed at 10:54:56 ===
+[10:55:50] (4/9) Starting: set aside award
+[x] Error while crawling 'set aside award': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'set aside award', '--max', '30']' returned non-zero exit status 1.
+[10:57:16] (5/9) Starting: costs of arbitration
+[x] Error while crawling 'costs of arbitration': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'costs of arbitration', '--max', '30']' returned non-zero exit status 1.
+[10:58:42] (6/9) Starting: anti-suit injunction
+[x] Error while crawling 'anti-suit injunction': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'anti-suit injunction', '--max', '30']' returned non-zero exit status 1.
+[11:00:07] (7/9) Starting: seat of arbitration
+[x] Error while crawling 'seat of arbitration': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'seat of arbitration', '--max', '30']' returned non-zero exit status 1.
+[11:01:33] (8/9) Starting: kompetenz-kompetenz
+[x] Error while crawling 'kompetenz-kompetenz': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'kompetenz-kompetenz', '--max', '30']' returned non-zero exit status 1.
+[11:02:59] (9/9) Starting: Model Law
+[x] Error while crawling 'Model Law': Command '['C:\\Users\\user\\Desktop\\LexChain\\.venv\\Scripts\\python.exe', 'C:\\Users\\user\\Desktop\\LexChain\\backend\\tools\\hklii_playwright_extract.py', '--query', 'Model Law', '--max', '30']' returned non-zero exit status 1.
+=== Nightly Crawl Completed at 11:04:25 ===
+
+=== Nightly Crawl Started: 2025-10-16 11:55:26 ===
+[✓] Warm-up completed successfully.
+[11:55:42] (1/10) Starting: TOOLS_DIR = Path(__file__).parent
+[✓] Finished: TOOLS_DIR = Path(__file__).parent at 11:56:22
+[11:57:37] (2/10) Starting: except Exception as e:
